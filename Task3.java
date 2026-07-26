@@ -1,4 +1,4 @@
-public class GFG {
+public class task3 {
 
     // Function to perform Binary Search
     static int binarySearch(int[] arr, int x) {
