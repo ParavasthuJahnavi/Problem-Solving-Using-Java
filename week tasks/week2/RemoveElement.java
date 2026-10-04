@@ -1,26 +1,25 @@
-package week2;
 
 import java.util.Scanner;
 
-public class RemoveDuplicates {
+public class RemoveElement {
 
-    public static int removeDuplicates(int[] nums) {
-        if (nums.length == 0)
-            return 0;
+    public static int removeElement(int[] nums, int val) {
 
-        int i = 0;
+        int k = 0;
 
-        for (int j = 1; j < nums.length; j++) {
-            if (nums[i] != nums[j]) {
-                i++;
-                nums[i] = nums[j];
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] != val) {
+                nums[k] = nums[i];
+                k++;
             }
         }
 
-        return i + 1;
+        return k;
     }
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
@@ -31,7 +30,9 @@ public class RemoveDuplicates {
             nums[i] = sc.nextInt();
         }
 
-        int k = removeDuplicates(nums);
+        int val = sc.nextInt();
+
+        int k = removeElement(nums, val);
 
         System.out.println(k);
 
